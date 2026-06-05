@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>UT Transducer Selector Toolkit</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --or:#F26522;--or-d:#C44E10;--or-l:#FEF0E8;
+  --bl:#003A70;--bl-m:#0059A8;--bl-l:#E8F0F8;
+  --g50:#F7F8FA;--g100:#ECEEF2;--g200:#D1D6DF;
+  --g400:#8B92A0;--g600:#5A6170;--g900:#141820;
+}
+html{font-size:16px}
+body{
+  font-family:'DM Sans',system-ui,sans-serif;
+  background:var(--g50);color:var(--g900);
+  min-height:100vh;display:flex;flex-direction:column;
+}
+
+/* ── HEADER ── */
+header{
+  background:linear-gradient(135deg,var(--bl) 0%,#004A8F 55%,#0061B5 100%);
+  padding:3rem 1.5rem 2.5rem;text-align:center;
+  position:relative;overflow:hidden;
+}
+header::before{content:'';position:absolute;right:-60px;top:-60px;
+  width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,0.03)}
+header::after{content:'';position:absolute;left:-40px;bottom:-80px;
+  width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,0.025)}
+.header-inner{position:relative;z-index:1;max-width:640px;margin:0 auto}
+.header-icon{
+  width:64px;height:64px;background:var(--or);border-radius:16px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:30px;margin:0 auto 1.25rem;
+  box-shadow:0 4px 20px rgba(242,101,34,0.35);
+}
+header h1{
+  font-size:1.875rem;font-weight:700;color:#fff;
+  line-height:1.2;margin-bottom:0.75rem;
+}
+header h1 span{color:var(--or)}
+header p{font-size:0.9375rem;color:rgba(255,255,255,0.6);line-height:1.6;max-width:480px;margin:0 auto}
+
+/* ── MAIN ── */
+main{flex:1;display:flex;align-items:center;justify-content:center;padding:2.5rem 1rem}
+.card-wrap{width:100%;max-width:560px}
+
+/* ── LANGUAGE CARDS ── */
+.lang-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:1.5rem}
+.lang-card{
+  background:#fff;border:2px solid var(--g100);border-radius:20px;
+  padding:1.75rem 1.5rem;text-align:center;text-decoration:none;color:inherit;
+  transition:border-color .15s,box-shadow .15s,transform .12s;
+  display:flex;flex-direction:column;align-items:center;gap:10px;
+  box-shadow:0 2px 8px rgba(0,0,0,0.06);
+}
+.lang-card:hover{
+  border-color:var(--or);
+  box-shadow:0 8px 28px rgba(242,101,34,0.15);
+  transform:translateY(-2px);
+}
+.lang-flag{font-size:2.5rem;line-height:1}
+.lang-name{font-size:1.0625rem;font-weight:700;color:var(--g900)}
+.lang-sub{font-size:0.8125rem;color:var(--g400)}
+.lang-btn{
+  margin-top:6px;background:var(--or);color:#fff;
+  font-size:0.8125rem;font-weight:600;padding:8px 18px;
+  border-radius:20px;transition:background .15s;
+  font-family:'DM Sans',sans-serif;
+}
+.lang-card:hover .lang-btn{background:var(--or-d)}
+
+/* ── FEATURES ── */
+.features{
+  background:#fff;border:1px solid var(--g100);border-radius:16px;
+  padding:1.25rem 1.5rem;box-shadow:0 2px 8px rgba(0,0,0,0.05);
+}
+.features-title{
+  font-size:0.6875rem;font-weight:700;color:var(--g400);
+  text-transform:uppercase;letter-spacing:0.08em;margin-bottom:1rem;
+}
+.feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.feat{display:flex;align-items:flex-start;gap:10px}
+.feat-icon{
+  width:32px;height:32px;border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:15px;flex-shrink:0;
+}
+.feat-icon.blue{background:var(--bl-l)}
+.feat-icon.orange{background:var(--or-l)}
+.feat-icon.green{background:#E6F4F1}
+.feat-icon.gray{background:var(--g100)}
+.feat-text strong{display:block;font-size:0.8125rem;font-weight:600;color:var(--g900);margin-bottom:2px}
+.feat-text span{font-size:0.75rem;color:var(--g400);line-height:1.4}
+
+/* ── FOOTER ── */
+footer{
+  text-align:center;padding:1.5rem;
+  font-size:0.75rem;color:var(--g400);
+  border-top:1px solid var(--g100);background:#fff;
+}
+
+/* ── RESPONSIVE ── */
+@media(max-width:480px){
+  header h1{font-size:1.5rem}
+  .lang-grid{grid-template-columns:1fr}
+  .feat-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="header-icon">🔊</div>
+    <h1>UT Transducer <span>Selector</span> Toolkit</h1>
+    <p>Free offline reference tool for ultrasonic thickness gauging. No installation, no login, no internet required.</p>
+  </div>
+</header>
+
+<main>
+  <div class="card-wrap">
+
+    <div class="lang-grid">
+      <a class="lang-card" href="ndt_toolkit_EN.html">
+        <div class="lang-flag">🇬🇧</div>
+        <div class="lang-name">English</div>
+        <div class="lang-sub">Full toolkit in English</div>
+        <div class="lang-btn">Open →</div>
+      </a>
+      <a class="lang-card" href="ndt_toolkit_ES.html">
+        <div class="lang-flag">🇪🇸</div>
+        <div class="lang-name">Español</div>
+        <div class="lang-sub">Toolkit completo en español</div>
+        <div class="lang-btn">Abrir →</div>
+      </a>
+    </div>
+
+    <div class="features">
+      <div class="features-title">What's inside</div>
+      <div class="feat-grid">
+        <div class="feat">
+          <div class="feat-icon blue">🔵</div>
+          <div class="feat-text">
+            <strong>Evident Transducer Selector</strong>
+            <span>26 materials · Contact, Immersion &amp; Corrosion · 43 dual-element probes</span>
+          </div>
+        </div>
+        <div class="feat">
+          <div class="feat-icon orange">📐</div>
+          <div class="feat-text">
+            <strong>Velocity Calculator</strong>
+            <span>27 materials · T = V×(t/2) live calculation · Temperature guide</span>
+          </div>
+        </div>
+        <div class="feat">
+          <div class="feat-icon green">📋</div>
+          <div class="feat-text">
+            <strong>Quick Reference</strong>
+            <span>Modes 1/2/3 · Transducer types · Frequency guide</span>
+          </div>
+        </div>
+        <div class="feat">
+          <div class="feat-icon gray">📖</div>
+          <div class="feat-text">
+            <strong>NDT Glossary</strong>
+            <span>25 searchable terms · EN &amp; ES</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  UT Transducer Selector Toolkit &nbsp;·&nbsp; Open in any modern browser &nbsp;·&nbsp; Works offline
+</footer>
+
+</body>
+</html>
