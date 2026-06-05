@@ -42,7 +42,7 @@ Includes a temperature effect guide — critical for plastics and rubber where v
 | File | Language |
 |------|----------|
 | `ndt_toolkit_EN (1).html` | English |
-| `ndt_toolkit_ES.html (1).html` | Spanish |
+| `ndt_toolkit_ES (1).html` | Spanish |
 
 ---
 
